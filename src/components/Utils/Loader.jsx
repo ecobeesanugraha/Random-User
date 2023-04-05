@@ -3,7 +3,7 @@ const Loader = () => {
         <div className="loader">
             <img
                 className="load-spinner"
-                src="src/assets/loader.gif"
+                src="loader.gif"
                 alt="Loading..."
             />
         </div>
