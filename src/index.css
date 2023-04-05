@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+
+:root {
+  --dark-color: #454545;
+  --light-color: #ffe6c7;
+
+  --primary-color: #ff6000;
+  --secondary-color: #ff8033;
+  --tertiary-color: #ffa066;
+  --quaternary-color: #ffbf99;
+
+  --font-family: "Work Sans", sans-serif;
+  --xsmall-size: 0.5rem;
+  --small-size: 0.8rem;
+  --normal-size: 1rem;
+  --medium-size: 1.1rem;
+  --large-size: 1.5rem;
+  --xlarge-size: 2rem;
+
+  --normal-border-radius: 8px;
+  --circular-border-radius: 50%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+.nav {
+  padding: 1.5rem;
+  background-color: var(--dark-color);
+  text-align: center;
+  color: white;
+}
+
+.nav-heading--span {
+  color: var(--secondary-color);
+}
+
+.refresh-btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: var(--normal-border-radius);
+  background-color: var(--primary-color);
+  font-weight: bold;
+  font-size: var(--normal-size);
+  color: white;
+  cursor: pointer;
+}
+
+.refresh-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.load-spinner {
+  width: 5rem;
+}
+
+.error-message {
+  margin-top: 5rem;
+  font-size: var(--medium-size);
+  font-weight: bold;
+  color: red;
+}
+
+main,
+.user-card-container,
+.user-cards,
+.user-details {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.user-card-container {
+  margin-top: 5rem;
+}
+
+.user-cards {
+  min-width: 20rem;
+  padding: 2rem;
+  margin-top: 5rem;
+  border: 5px solid var(--primary-color);
+  border-radius: var(--normal-border-radius);
+}
+
+.user-profile-pic {
+  width: 10rem;
+  margin-bottom: 2rem;
+  border-radius: var(--circular-border-radius);
+  border: 5px solid black;
+}
+
+.user-gender {
+  text-transform: capitalize;
+}
+
+.details-heading {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.other-details {
+  font-size: var(--medium-size);
+}
+
+.view-password-btn {
+  border: none;
+  background: none;
+  font-size: var(--normal-size);
+  font-weight: bold;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.password-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
