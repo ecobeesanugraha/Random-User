@@ -21,6 +21,22 @@
   --circular-border-radius: 50%;
 }
 
+.dark-mode {
+  --body-bg-color: black;
+  --card-bg-color: var(--dark-color);
+  --card-text-color: white;
+}
+
+.light-mode {
+  --body-bg-color: white;
+  --card-bg-color: white;
+  --card-text-color: black;
+}
+
+body {
+  background-color: var(--body-bg-color);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -29,6 +45,9 @@
 }
 
 .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1.5rem;
   background-color: var(--dark-color);
   text-align: center;
@@ -37,6 +56,21 @@
 
 .nav-heading--span {
   color: var(--secondary-color);
+}
+
+.toggle-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--normal-border-radius);
+  background-color: #ff6000;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-toggle-mode {
+  margin-left: 1rem;
+  font-size: var(--normal-size);
+  cursor: pointer;
 }
 
 .refresh-btn {
@@ -55,7 +89,8 @@
 }
 
 .load-spinner {
-  width: 45rem;
+  width: 7rem;
+  margin-top: 2rem;
 }
 
 .error-message {
@@ -79,6 +114,8 @@ main,
 }
 
 .user-cards {
+  background-color: var(--card-bg-color);
+  color: var(--card-text-color);
   min-width: 20rem;
   padding: 2rem;
   margin-top: 5rem;
