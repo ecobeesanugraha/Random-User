@@ -22,7 +22,7 @@
 }
 
 .dark-mode {
-  --body-bg-color: black;
+  --body-bg-color: #181a1b;
   --card-bg-color: var(--dark-color);
   --card-text-color: white;
 }
@@ -65,6 +65,10 @@ body {
   background-color: #ff6000;
   color: white;
   cursor: pointer;
+}
+
+.toggle-button:hover {
+  background-color: var(--secondary-color);
 }
 
 .nav-toggle-mode {
@@ -114,13 +118,22 @@ main,
 }
 
 .user-cards {
-  background-color: var(--card-bg-color);
-  color: var(--card-text-color);
-  min-width: 20rem;
+  width: 32rem;
   padding: 2rem;
-  margin-top: 5rem;
+  margin: 3rem 0;
   border: 5px solid var(--primary-color);
   border-radius: var(--normal-border-radius);
+  background-color: var(--card-bg-color);
+  color: var(--card-text-color);
+}
+
+.user-name-head {
+  position: absolute;
+  top: 16.6rem;
+  left: 44.3rem;
+  padding: 0.3rem 0.5rem;
+  background-color: var(--primary-color);
+  color: white;
 }
 
 .user-profile-pic {
@@ -134,13 +147,22 @@ main,
   text-transform: capitalize;
 }
 
+.other-details {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  row-gap: 2rem;
+  font-size: var(--medium-size);
+}
+
 .details-heading {
-  font-weight: bold;
+  font-size: var(--medium-size);
+  font-weight: bolder;
   color: var(--primary-color);
 }
 
-.other-details {
-  font-size: var(--medium-size);
+.details-sub-heading {
+  font-weight: bold;
 }
 
 .view-password-btn {
