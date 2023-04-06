@@ -2,34 +2,81 @@ import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 
-const Navbar = () => {
-    const [mode, setMode] = useState("Light Mode")
-    const [dark, setDark] = useState(false)
-    const [icon, setIcon] = useState(faMoon)
+const MODES = {
+    LIGHT: 'light-mode',
+    DARK: 'dark-mode'
+}
+
+const MODESLABELS = {
+    LIGHT: 'Light',
+    DARK: 'Dark'
+}
+
+const NavBar = () => {
+    const [mode, setMode] = useState(MODES.LIGHT)
 
     useEffect(() => {
         let active = true
+
         if (active) {
-            dark ? setIcon(faSun) : setIcon(faMoon)
-            mode == "Light Mode" ? setMode("Dark Mode") : setMode("Light Mode")
-            mode == "Light Mode" ? document.body.className = "light-mode" : document.body.className = "dark-mode"
+            if (isDarkMode(mode)) {
+                document.body.className = MODES.DARK
+            } else {
+                document.body.className = MODES.LIGHT
+            }
         }
 
         return () => {
             active = false
         }
-    }, [dark])
+    }, [mode])
+    
+    const isDarkMode = (mode) => mode === MODES.DARK;
+
+    const getIcon = () => {
+           if (isDarkMode(mode)) {
+                return faMoon
+           }
+        
+           return faSun
+    }
+    
+    const getLabel = () => {
+           if (isDarkMode(mode)) {
+                return MODESLABELS.LIGHT
+           }
+        
+           return MODESLABELS.DARK
+    }
+
+    const handleModes = () => setMode((val) => isDarkMode(val) ? modes.light : modes.dark)
 
     return (
         <nav className="nav">
-            <h1 className="nav-heading">Random <span className="nav-heading--span">User</span></h1>
+            <h1 className="nav-heading">
+                Random
 
-            <button aria-label="Toggle Dark/Light Mode" type="button" onClick={() => { setDark(!dark) }} className="toggle-button" id="toggle-button">
-                {mode}
-                <FontAwesomeIcon icon={icon} className="nav-toggle-mode" />
+                <span className="nav-heading--span">
+                    User
+                </span>
+            </h1>
+
+            <button
+                type="button"
+                id="toggle-button"
+                className="toggle-button"
+                onClick={handleModes}
+                aria-label="Toggle Dark/Light Mode"
+            >
+                {getLabel()}
+
+                <FontAwesomeIcon
+                   icon={getIcon()}
+                   className="nav-toggle-mode"
+                />
             </button>
         </nav>
     );
 }
 
-export default Navbar;
+export default NavBar;
