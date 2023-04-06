@@ -128,17 +128,15 @@ main,
 }
 
 .user-name-head {
-  position: absolute;
-  top: 16.6rem;
-  left: 44.3rem;
+  margin: 1rem 0;
   padding: 0.3rem 0.5rem;
   background-color: var(--primary-color);
+  font-weight: bold;
   color: white;
 }
 
 .user-profile-pic {
   width: 10rem;
-  margin-bottom: 2rem;
   border-radius: var(--circular-border-radius);
   border: 5px solid black;
 }
